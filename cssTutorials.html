@@ -1,0 +1,1051 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>CSS Tutorials</title>
+    <link rel="stylesheet" href="css/home_style.css">
+</head>
+<body>
+    <a name="top"></a>
+    <div id="header">
+        <h1>Welcome to CSS Tutorial</h1>
+    </div>
+
+    <nav id="primary_nav_wrap">
+        <ul>
+            <li><a href="Home.html">Home</a></li>
+            <li class="current-menu-item"><a href="cssTutorials.html">CSS Tutorials</a>
+                <ul>
+                    <li><a href="#cssSyntax">CSS Syntax</a></li>
+                    <li><a href="#cssSelectors">CSS Selectors</a></li>
+                    <li><a href="#howto">How to use CSS</a></li>
+                    <li><a href="#cssProperties">CSS Properties</a>
+                        <ul>
+                            <li><a href="#color">Color</a></li>
+                            <li><a href="#background">Background and Borders</a></li>
+                            <li><a href="#basic">Basic Box</a></li>
+                            <li><a href="#text">Text</a></li>
+                            <li><a href="#textdecor">Text Decoration</a></li>
+                            <li><a href="#font">Fonts</a></li>
+                            <li><a href="#table">Table</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <li><a href="About_us.html">About Us</a>
+            <li><a href="Contact_us.html">Contact Us</a></li>
+        </ul>
+    </nav>
+
+    <div id="section">
+
+        <div id="cssSyntax">
+            <h2>CSS Syntax</h2>
+            <p>A CSS rule-set consists of a selector and a declaration block:</p>
+            <p><img src="img/selector.gif" alt="CSS selector"></p>
+            <p>The selector points to the HTML element you want to style.</p>
+            <p>The declaration block contains one or more declarations separated by
+                semicolons.</p>
+            <p>Each declaration includes a CSS property name and a value, separated by a colon.</p>
+            <p>A CSS declaration always ends with a semicolon, and declaration blocks are
+                surrounded by curly braces.</p>
+            <p>In the following example all &lt;p&gt; elements will be center-aligned, with a red
+                text color:</p>
+            <div class="code-box">
+                <h3>Example</h3>
+                <div class="code">
+                    p
+                    {<br>
+                    &nbsp;&nbsp;&nbsp;
+                    color: red;<br>
+                    &nbsp;&nbsp;&nbsp;
+                    text-align: center;<br>
+                    }
+                </div>
+            </div>
+        </div>
+
+        <div id="cssSelectors">
+            <h2>CSS Selectors</h2>
+            <p>CSS selectors are used to "find" (or select) HTML elements based on their
+                element name, id,
+                class, attribute, and more.</p>
+
+            <h3>The element Selector</h3>
+            <p>The element selector selects elements based on the element name.</p>
+            <p>You can select all &lt;p&gt; elements on a page like this (in this case, all &lt;p&gt; elements will be
+                center-aligned, with a red text color):</p>
+            <div class="code-box">
+                <h3>Example</h3>
+                <div class="code">
+                    p
+                    {<br>
+                    &nbsp;&nbsp;&nbsp;
+                    text-align: center;<br>
+                    &nbsp;&nbsp;&nbsp;
+                    color: red;<br>
+                    }
+                </div>
+            </div>
+
+            <h3>The id Selector</h3>
+            <p>The id selector uses the id attribute of an HTML element to select a specific element.</p>
+            <p>The id of an element should be unique within a page, so the id selector is
+                used to
+                select one unique element!</p>
+            <p>To select an element with a specific id, write a hash (#) character, followed by
+                the id of the element.</p>
+            <p>The style rule below will be applied to the HTML element with id="para1":</p>
+            <div class="code-box">
+                <h3>Example</h3>
+                <div class="code">
+                    #para1
+                    {<br>
+                    &nbsp;&nbsp;&nbsp;
+                    text-align: center;<br>
+                    &nbsp;&nbsp;&nbsp;
+                    color: red;<br>
+                    }
+                </div>
+            </div>
+
+            <div class="note">
+                <p><strong>Note:</strong> An id name cannot start with a number!</p>
+            </div>
+
+            <h3>The class Selector</h3>
+            <p>The class selector selects elements with a specific class attribute.</p>
+            <p>To select elements with a specific class, write a period (.) character, followed by the name of the class.</p>
+            <p>In the example below, all HTML elements with class="center" will be red and center-aligned:</p>
+            <div class="code-box">
+                <h3>Example</h3>
+                <div class="code">
+                    .center {<br>&nbsp;&nbsp;&nbsp; text-align: center;<br>&nbsp;&nbsp;&nbsp; color: red;<br>}
+                </div>
+            </div>
+
+            <p>You can also specify that only specific HTML elements should be affected by a class.</p>
+            <p>In the example below, only &lt;p&gt; elements with class="center" will be center-aligned:</p>
+            <div class="code-box">
+                <h3>Example</h3>
+                <div class="code">
+                    p.center {<br>&nbsp;&nbsp;&nbsp; text-align: center;<br>&nbsp;&nbsp;&nbsp; color: red;<br>}
+                </div>
+            </div>
+
+            <p>HTML elements
+                can also refer to more than one class.</p>
+            <p>In the example below, the &lt;p&gt; element will be styled according to class="center"
+                and to class="large":</p>
+            <div class="code-box">
+                <h3>Example</h3>
+                <div class="code">
+                    &lt;p class="center large"&gt;This paragraph refers to two classes.&lt;/p&gt;</div>
+            </div>
+
+            <div class="note">
+                <p><strong>Note:</strong> A class name cannot start with a number!</p>
+            </div>
+
+            <h3>Grouping Selectors</h3>
+            <p>If you have elements with the same style definitions, like this:</p>
+            <div class="code-box">
+                <div class="code">
+                    h1
+                    {<br>
+                    &nbsp;&nbsp;&nbsp;
+                    text-align: center;<br>&nbsp;&nbsp;&nbsp; color: red;<br>
+                    }<br>
+                    <br>h2
+                    {<br>
+                    &nbsp;&nbsp;&nbsp;
+                    text-align: center;<br>&nbsp;&nbsp;&nbsp; color: red;<br>}<br>
+                    <br>p
+                    {<br>
+                    &nbsp;&nbsp;&nbsp;
+                    text-align: center;<br>&nbsp;&nbsp;&nbsp; color: red;<br>
+                    }
+                </div>
+            </div>
+
+            <p>It will be better to group the selectors, to minimize the code.</p>
+            <p>To group selectors, separate each selector with a comma.</p>
+            <p>In the example below we have grouped the selectors from the code above:</p>
+            <div class="code-box">
+                <h3>Example</h3>
+                <div class="code">
+                    h1, h2, p
+                    {<br>
+                    &nbsp;&nbsp;&nbsp;
+                    text-align: center;<br>&nbsp;&nbsp;&nbsp; color: red;<br>}</div>
+            </div>
+
+            <h3>CSS Comments</h3>
+            <p>Comments are used to explain the code, and may help when you edit the source code at a later date.</p>
+            <p>Comments are ignored by browsers.</p>
+            <p>A CSS comment starts with /* and ends with */. Comments can also span
+                multiple lines:</p>
+            <div class="code-box">
+                <h3>Example</h3>
+                <div class="code">
+                    p
+                    {<br>
+                    &nbsp;&nbsp;&nbsp;
+                    color: red;<br>
+                    &nbsp;&nbsp;&nbsp;
+                    /* This is a single-line comment */<br>
+                    &nbsp;&nbsp;&nbsp;
+                    text-align: center;<br>
+                    }<br><br>/* This is<br>a multi-line<br>comment */
+
+                </div>
+            </div>
+
+            <h3>All CSS Selectors</h3>
+            <table class="table">
+                <tr>
+                    <th>Pattern</th>
+                    <th>Matches</th>
+                    <th>First defined<br />
+                        in CSS level</th>
+                </tr>
+                <tr>
+                    <td>E</td>
+                    <td>an element of type E</td>
+                    <td>1</td>
+                </tr>
+                <tr>
+                    <td>E:link</td>
+                    <td>an E element is the source anchor of a hyperlink of which the target is not yet visited (:link) or already visited (:visited)</td>
+                    <td>1</td>
+                </tr>
+                <tr>
+                    <td>E:active</td>
+                    <td>an E element during certain user actions</td>
+                    <td>1</td>
+                </tr>
+                <tr>
+                    <td>E::first-line</td>
+                    <td>the first formatted line of an E element</td>
+                    <td>1</td>
+                </tr>
+                <tr>
+                    <td>E::first-letter</td>
+                    <td>the first formatted letter of an E element</td>
+                    <td>1</td>
+                </tr>
+                <tr>
+                    <td>.c</td>
+                    <td>all elements with class="c"</td>
+                    <td>1</td>
+                </tr>
+                <tr>
+                    <td>#myid</td>
+                    <td>the element with id="myid"</td>
+                    <td>1</td>
+                </tr>
+                <tr>
+                    <td>E.warning</td>
+                    <td>an E element whose class is "warning" (the document language specifies how class is determined)</td>
+                    <td>1</td>
+                </tr>
+                <tr>
+                    <td>E#myid</td>
+                    <td>an E element with ID equal to "myid"</td>
+                    <td>1</td>
+                </tr>
+                <tr>
+                    <td>E F</td>
+                    <td>an F element descendant of an E element</td>
+                    <td>1</td>
+                </tr>
+                <tr>
+                    <td>*</td>
+                    <td>any element</td>
+                    <td>2</td>
+                </tr>
+                <tr>
+                    <td>E[foo]</td>
+                    <td>an E element with a "foo" attribute</td>
+                    <td>2</td>
+                </tr>
+                <tr>
+                    <td>E[foo="bar"]</td>
+                    <td>an E element whose "foo" attribute value is exactly equal to "bar"</td>
+                    <td>2</td>
+                </tr>
+                <tr>
+                    <td>E[foo~="bar"]</td>
+                    <td>an E element whose "foo" attribute value is a list of whitespace-separated values, one of which is exactly equal to "bar"</td>
+                    <td>2</td>
+                </tr>
+                <tr>
+                    <td>E[foo|="en"]</td>
+                    <td>an E element whose "foo" attribute has a hyphen-separated list of values beginning (from the left) with "en"</td>
+                    <td>2</td>
+                </tr>
+                <tr>
+                    <td>E:first-child</td>
+                    <td>an E element, first child of its parent</td>
+                    <td>2</td>
+                </tr>
+                <tr>
+                    <td>E:lang(fr)</td>
+                    <td>an element of type E in language "fr" (the document language specifies how language is determined)</td>
+                    <td>2</td>
+                </tr>
+                <tr>
+                    <td>E::before</td>
+                    <td>generated content before an E element's content</td>
+                    <td>2</td>
+                </tr>
+                <tr>
+                    <td>E::after</td>
+                    <td>generated content after an E element's content</td>
+                    <td>2</td>
+                </tr>
+                <tr>
+                    <td>E &gt; F</td>
+                    <td>an F element child of an E element</td>
+                    <td>2</td>
+                </tr>
+                <tr>
+                    <td>E + F</td>
+                    <td>an F element immediately preceded by an E element</td>
+                    <td>2</td>
+                </tr>
+                <tr>
+                    <td>E[foo^="bar"]</td>
+                    <td>an E element whose "foo" attribute value begins exactly with the string "bar"</td>
+                    <td>3</td>
+                </tr>
+                <tr>
+                    <td>E[foo$="bar"]</td>
+                    <td>an E element whose "foo" attribute value ends exactly with the string "bar"</td>
+                    <td>3</td>
+                </tr>
+                <tr>
+                    <td>E[foo*="bar"]</td>
+                    <td>an E element whose "foo" attribute value contains the substring "bar"</td>
+                    <td>3</td>
+                </tr>
+                <tr>
+                    <td>E:root</td>
+                    <td>an E element, root of the document</td>
+                    <td>3</td>
+                </tr>
+                <tr>
+                    <td>E:nth-child(n)</td>
+                    <td>an E element, the n-th child of its parent</td>
+                    <td>3</td>
+                </tr>
+                <tr>
+                    <td>E:nth-last-child(n)</td>
+                    <td>an E element, the n-th child of its parent, counting from the last one</td>
+                    <td>3</td>
+                </tr>
+                <tr>
+                    <td>E:nth-of-type(n)</td>
+                    <td>an E element, the n-th sibling of its type</td>
+                    <td>3</td>
+                </tr>
+                <tr>
+                    <td>E:nth-last-of-type(n)</td>
+                    <td>an E element, the n-th sibling of its type, counting from the last one</td>
+                    <td>3</td>
+                </tr>
+                <tr>
+                    <td>E:last-child</td>
+                    <td>an E element, last child of its parent</td>
+                    <td>3</td>
+                </tr>
+                <tr>
+                    <td>E:first-of-type</td>
+                    <td>an E element, first sibling of its type</td>
+                    <td>3</td>
+                </tr>
+                <tr>
+                    <td>E:last-of-type</td>
+                    <td>an E element, last sibling of its type</td>
+                    <td>3</td>
+                </tr>
+                <tr>
+                    <td>E:only-child</td>
+                    <td>an E element, only child of its parent</td>
+                    <td>3</td>
+                </tr>
+                <tr>
+                    <td>E:only-of-type</td>
+                    <td>an E element, only sibling of its type</td>
+                    <td>3</td>
+                </tr>
+                <tr>
+                    <td>E:empty</td>
+                    <td>an E element that has no children (including text nodes)</td>
+                    <td>3</td>
+                </tr>
+                <tr>
+                    <td>E:target</td>
+                    <td>an E element being the target of the referring URI</td>
+                    <td>3</td>
+                </tr>
+                <tr>
+                    <td>E:enabled</td>
+                    <td>a user interface element E that is enabled</td>
+                    <td>3</td>
+                </tr>
+                <tr>
+                    <td>E:disabled</td>
+                    <td>a user interface element E that is disabled</td>
+                    <td>3</td>
+                </tr>
+                <tr>
+                    <td>E:checked</td>
+                    <td>a user interface element E that is checked (for instance a radio-button or checkbox)</td>
+                    <td>3</td>
+                </tr>
+                <tr>
+                    <td>E:not(s)</td>
+                    <td>an E element that does not match simple selector s</td>
+                    <td>3</td>
+                </tr>
+                <tr>
+                    <td>E ~ F</td>
+                    <td>an F element preceded by an E element</td>
+                    <td>3</td>
+                </tr>
+            </table>
+        </div>
+
+        <div id="howto">
+            <h2>How To Use CSS</h2>
+            <p>When a browser reads a style sheet, it will format the HTML document according to
+                the information in the style sheet.</p>
+            <h3>Three Ways to Insert CSS</h3>
+            <p>There are three ways of inserting a style sheet:</p>
+            <ul class="info">
+                <li>External style sheet</li>
+                <li>Internal style sheet</li>
+                <li>Inline style</li>
+            </ul>
+
+            <h3>External Style Sheet</h3>
+            <p>With an
+                external style sheet, you can change the look of an entire website by changing
+                just one file!</p>
+            <p>Each page must include a reference to the external style sheet file inside the &lt;link&gt;
+                element. The &lt;link&gt; element goes inside the &lt;head&gt; section:</p>
+
+            <div class="code-box">
+                <h3>Example</h3>
+                <div class="code">
+                    &lt;head&gt;<br>
+                    &lt;link rel="stylesheet" type="text/css"
+                    href="mystyle.css"&gt;<br>
+                    &lt;/head&gt;</div>
+            </div>
+
+            <p>An external style sheet can be written in any text editor. The file should not contain any html tags. The style sheet file must be saved with a .css extension.</p>
+            <p>Here is how the "mystyle.css" looks:</p>
+            <div class="code-box">
+                <div class="code">
+                    body {<br>&nbsp;&nbsp;&nbsp; background-color: lightblue;<br>}<br><br>h1 {<br>&nbsp;&nbsp;&nbsp;
+                    color: navy;<br>&nbsp;&nbsp;&nbsp; margin-left: 20px;<br>}</div>
+            </div>
+
+            <div class="note">
+            <p><strong>Note:</strong> Do not add a space between the property value and the unit (such as <code>margin-left: 20 px;</code>). The correct way is: <code>margin-left: 20px;</code></p>
+            </div>
+
+            <h3>Internal Style Sheet</h3>
+            <p>An internal style sheet may be used if one single page has a unique style.</p>
+            <p>Internal styles are defined within the &lt;style&gt; element, inside the &lt;head&gt; section of an HTML page:</p>
+            <div class="code-box">
+                <h3>Example</h3>
+                <div class="code">
+                    &lt;head&gt;<br>&lt;style&gt;<br>body {<br>&nbsp;&nbsp;&nbsp; background-color: linen;<br>}<br><br>
+                    h1 {<br>&nbsp;&nbsp;&nbsp; color: maroon;<br>&nbsp;&nbsp;&nbsp; margin-left: 40px;<br>} <br>
+                    &lt;/style&gt;<br>&lt;/head&gt;</div>
+            </div>
+
+            <h3>Inline Styles</h3>
+            <p>An inline style may be used to apply a unique style for a single element.</p>
+            <p>To use inline styles, add the style attribute to the relevant element. The
+                style attribute can contain any CSS property.</p>
+            <p>The example below shows how to change
+                the color and the left margin of a &lt;h1&gt; element:</p>
+            <div class="code-box">
+                <h3>Example</h3>
+                <div class="code">
+                    &lt;h1 style="color:blue;margin-left:30px;"&gt;This is a heading&lt;/h1&gt;</div>
+            </div>
+            <div class="note">
+                <p><strong>Tip:</strong> An inline style loses many of the advantages of a style sheet (by mixing
+                    content with presentation). Use this method sparingly.</p>
+            </div>
+
+            <h3>Multiple Style Sheets</h3>
+            <p>If some properties have been defined for the same selector (element) in different style sheets,
+                the value from the last read style sheet will be used.&nbsp;</p>
+            <h3> Example</h3>
+            <p> Assume that an external style sheet has the following
+                style for the &lt;h1&gt; element:</p>
+            <div class="code-box">
+                <div class="code">
+                    h1
+                    {<br>
+                    &nbsp;&nbsp;&nbsp;
+                    color: navy;<br>
+                    }
+                </div>
+            </div>
+
+            <p>then, assume that an internal style sheet also has the following style for the
+                &lt;h1&gt; element:</p>
+            <div class="code-box">
+                <div class="code">
+                    h1
+                    {<br>
+                    &nbsp;&nbsp;&nbsp; color: orange;&nbsp;&nbsp;&nbsp;
+                    <br>}</div></div>
+
+            <p>If the internal style is defined after the link to the external style sheet, the &lt;h1&gt; elements will be
+                "orange":</p>
+            <div class="code-box">
+                <h3>Example</h3>
+                <div class="code">
+                    &lt;head&gt;<br>&lt;link rel="stylesheet" type="text/css" href="mystyle.css"&gt;<br>
+                    &lt;style&gt;<br>h1 {<br>&nbsp;&nbsp;&nbsp; color: orange;<br>}<br>&lt;/style&gt;<br>&lt;/head&gt;</div>
+
+            </div>
+            <p>However, if the internal style is defined before the link to the external style sheet, the &lt;h1&gt; elements will be
+                "navy":</p>
+            <div class="code-box">
+                <h3>Example</h3>
+                <div class="code">
+                    &lt;head&gt;<br>&lt;style&gt;<br>h1 {<br>&nbsp;&nbsp;&nbsp; color: orange;<br>}<br>&lt;/style&gt;<br>&lt;link rel="stylesheet" type="text/css" href="mystyle.css"&gt;<br>
+                    &lt;/head&gt;</div>
+
+            </div>
+        </div>
+
+        <div id="cssProperties">
+            <h2>CSS Properties</h2>
+            <h3>CSS Property Groups</h3>
+            <div class="info">
+                <ul style="list-style: none">
+                    <li><a href="#color">Color</a></li>
+                    <li><a href="#background">Background and Borders</a></li>
+                    <li><a href="#basic">Basic Box</a></li>
+                    <li><a href="#text">Text</a></li>
+                    <li><a href="#textdecor">Text Decoration</a></li>
+                    <li><a href="#font">Fonts</a></li>
+                    <li><a href="#table">Table</a></li>
+                </ul>
+            </div>
+
+            <p>The "CSS" column indicates in which CSS version the property is defined (CSS1, CSS2, or CSS3).</p>
+
+            <h3><a id="color">Color Properties</a></h3>
+            <table class="table">
+                <tbody><tr>
+                    <th style="width:25%;">Property</th>
+                    <th style="width:67%;">Description</th>
+                    <th style="width:8%;">CSS</th>
+                </tr>
+                <tr>
+                    <td><a href="#">color</a></td>
+                    <td>Sets the color of text</td>
+                    <td>1</td>
+                </tr>
+                <tr>
+                    <td><a href="#">opacity</a></td>
+                    <td>Sets the opacity level for an element</td>
+                    <td>3</td>
+                </tr>
+                </tbody>
+            </table>
+
+            <h3><a id="background">Background and Border Properties</a></h3>
+            <table class="table">
+                <tbody>
+                <tr>
+                    <th style="width:25%;">Property</th>
+                    <th style="width:67%;">Description</th>
+                    <th style="width:8%;">CSS</th>
+                </tr>
+                <tr>
+                    <td><a href="#">background</a></td>
+                    <td>A shorthand property for setting all the background properties in one declaration</td>
+                    <td>1</td>
+                </tr>
+                <tr>
+                    <td><a href="#">background-attachment</a></td>
+                    <td>Sets whether a background image is fixed or scrolls with the rest of the page</td>
+                    <td>1</td>
+                </tr>
+                <tr>
+                    <td><a href="#">background-blend-mode</a></td>
+                    <td>Specifies the blending mode of each background layer (color/image)</td>
+                    <td>3&nbsp;</td>
+                </tr>
+                <tr>
+                    <td><a href="#">background-color</a></td>
+                    <td>Specifies the background color of an element</td>
+                    <td>1</td>
+                </tr>
+                <tr>
+                    <td><a href="#">background-image</a></td>
+                    <td>Specifies one or more background images for an element</td>
+                    <td>1</td>
+                </tr>
+                <tr>
+                    <td><a href="#">background-position</a></td>
+                    <td>Specifies the position of a background image</td>
+                    <td>1</td>
+                </tr>
+                <tr>
+                    <td><a href="#">background-repeat</a></td>
+                    <td>Sets how a background image will be repeated</td>
+                    <td>1</td>
+                </tr>
+                <tr>
+                    <td><a href="#">background-origin</a></td>
+                    <td>Specifies where the background image(s) is/are positioned</td>
+                    <td>3</td>
+                </tr>
+                <tr>
+                    <td><a href="#">background-size</a></td>
+                    <td>Specifies the size of the background image(s)</td>
+                    <td>3</td>
+                </tr>
+                <tr>
+                    <td><a href="#">border</a></td>
+                    <td>Sets all the border properties in one declaration</td>
+                    <td>1</td>
+                </tr>
+                <tr>
+                    <td><a href="#">border-bottom</a></td>
+                    <td>Sets all the bottom border properties in one declaration</td>
+                    <td>1</td>
+                </tr>
+                <tr>
+                    <td><a href="#">border-bottom-color</a></td>
+                    <td>Sets the color of the bottom border</td>
+                    <td>1&nbsp;</td>
+                </tr>
+                <tr>
+                    <td><a href="#">border-bottom-left-radius</a></td>
+                    <td>Defines the shape of the border of the bottom-left corner</td>
+                    <td>3</td>
+                </tr>
+                <tr>
+                    <td><a href="#">border-bottom-right-radius</a></td>
+                    <td>Defines the shape of the border of the bottom-right corner</td>
+                    <td>3</td>
+                </tr>
+                <tr>
+                    <td><a href="#">border-bottom-style</a></td>
+                    <td>Sets the style of the bottom border</td>
+                    <td>1</td>
+                </tr>
+                <tr>
+                    <td><a href="#">border-bottom-width</a></td>
+                    <td>Sets the width of the bottom border</td>
+                    <td>1</td>
+                </tr>
+                <tr>
+                    <td><a href="#">border-color</a></td>
+                    <td>Sets the color of the four borders</td>
+                    <td>1</td>
+                </tr>
+                <tr>
+                    <td><a href="#">border-image</a></td>
+                    <td>A shorthand property for setting all the border-image-* properties</td>
+                    <td>3</td>
+                </tr>
+                <tr>
+                    <td><a href="#">border-left</a></td>
+                    <td>Sets all the left border properties in one declaration</td>
+                    <td>1</td>
+                </tr>
+                <tr>
+                    <td><a href="#">border-left-color</a></td>
+                    <td>Sets the color of the left border</td>
+                    <td>1</td>
+                </tr>
+                <tr>
+                    <td><a href="#">border-left-style</a></td>
+                    <td>Sets the style of the left border</td>
+                    <td>1</td>
+                </tr>
+                <tr>
+                    <td><a href="#">border-left-width</a></td>
+                    <td>Sets the width of the left border</td>
+                    <td>1</td>
+                </tr>
+                <tr>
+                    <td><a href="#">border-radius</a></td>
+                    <td>A shorthand property for setting all the four border-*-radius properties</td>
+                    <td>3</td>
+                </tr>
+                <tr>
+                    <td><a href="#">border-right</a></td>
+                    <td>Sets all the right border properties in one declaration</td>
+                    <td>1</td>
+                </tr>
+                <tr>
+                    <td><a href="#">border-right-color</a></td>
+                    <td>Sets the color of the right border</td>
+                    <td>1</td>
+                </tr>
+                <tr>
+                    <td><a href="#">border-right-style</a></td>
+                    <td>Sets the style of the right border</td>
+                    <td>1</td>
+                </tr>
+                <tr>
+                    <td><a href="#">border-right-width</a></td>
+                    <td>Sets the width of the right border</td>
+                    <td>1</td>
+                </tr>
+                <tr>
+                    <td><a href="#">border-style</a></td>
+                    <td>Sets the style of the four borders</td>
+                    <td>1</td>
+                </tr>
+                <tr>
+                    <td><a href="#">border-top</a></td>
+                    <td>Sets all the top border properties in one declaration</td>
+                    <td>1</td>
+                </tr>
+                <tr>
+                    <td><a href="#">border-top-color</a></td>
+                    <td>Sets the color of the top border</td>
+                    <td>1</td>
+                </tr>
+                <tr>
+                    <td><a href="#">border-top-left-radius</a></td>
+                    <td>Defines the shape of the border of the top-left corner</td>
+                    <td>3</td>
+                </tr>
+                <tr>
+                    <td><a href="#">border-top-right-radius</a></td>
+                    <td>Defines the shape of the border of the top-right corner</td>
+                    <td>3</td>
+                </tr>
+                <tr>
+                    <td><a href="#">border-top-style</a></td>
+                    <td>Sets the style of the top border</td>
+                    <td>1</td>
+                </tr>
+                <tr>
+                    <td><a href="#">border-top-width</a></td>
+                    <td>Sets the width of the top border</td>
+                    <td>1</td>
+                </tr>
+                <tr>
+                    <td><a href="#">border-width</a></td>
+                    <td>Sets the width of the four borders</td>
+                    <td>1</td>
+                </tr>
+
+                <tr>
+                    <td><a href="#">box-shadow</a></td>
+                    <td>Attaches one or more drop-shadows to the box</td>
+                    <td>3</td>
+                </tr>
+                </tbody></table>
+
+            <h3><a id="basic">Basic Box Properties</a></h3>
+            <table class="table">
+                <tbody>
+                <tr>
+                    <th style="width:25%;">Property</th>
+                    <th style="width:67%;">Description</th>
+                    <th style="width:8%;">CSS</th>
+                </tr>
+                <tr>
+                    <td><a href="">clear</a></td>
+                    <td>Specifies which sides of an element where other floating elements are not allowed</td>
+                    <td>1</td>
+                </tr>
+                <tr>
+                    <td><a href="#">display</a></td>
+                    <td>Specifies how a certain HTML element should be displayed</td>
+                    <td>1</td>
+                </tr>
+                <tr>
+                    <td><a href="#">float</a></td>
+                    <td>Specifies whether or not a box should float</td>
+                    <td>1</td>
+                </tr>
+                <tr>
+                    <td><a href="#">height</a></td>
+                    <td>Sets the height of an element</td>
+                    <td>1</td>
+                </tr>
+                <tr>
+                    <td><a href="#">width</a></td>
+                    <td>Sets the width of an element</td>
+                    <td>1</td>
+                </tr>
+                <tr>
+                    <td><a href="#">margin</a></td>
+                    <td>Sets all the margin properties in one declaration</td>
+                    <td>1</td>
+                </tr>
+                <tr>
+                    <td><a href="#">margin-bottom</a></td>
+                    <td>Sets the bottom margin of an element</td>
+                    <td>1</td>
+                </tr>
+                <tr>
+                    <td><a href="#">margin-left</a></td>
+                    <td>Sets the left margin of an element</td>
+                    <td>1</td>
+                </tr>
+                <tr>
+                    <td><a href="#">margin-right</a></td>
+                    <td>Sets the right margin of an element</td>
+                    <td>1</td>
+                </tr>
+                <tr>
+                    <td><a href="#">margin-top</a></td>
+                    <td>Sets the top margin of an element</td>
+                    <td>1</td>
+                </tr>
+                <tr>
+                    <td><a href="#">max-height</a></td>
+                    <td>Sets the maximum height of an element</td>
+                    <td>2</td>
+                </tr>
+                <tr>
+                    <td><a href="#">max-width</a></td>
+                    <td>Sets the maximum width of an element</td>
+                    <td>2</td>
+                </tr>
+                <tr>
+                    <td><a href="#">min-height</a></td>
+                    <td>Sets the minimum height of an element</td>
+                    <td>2</td>
+                </tr>
+                <tr>
+                    <td><a href="#">min-width</a></td>
+                    <td>Sets the minimum width of an element</td>
+                    <td>2</td>
+                </tr>
+                <tr>
+                    <td><a href="#">overflow</a><br>
+                    </td>
+                    <td>Specifies what happens if content overflows an element's box</td>
+                    <td>2</td>
+                </tr>
+                <tr>
+                    <td><a href="#">padding</a></td>
+                    <td>Sets all the padding properties in one declaration</td>
+                    <td>1</td>
+                </tr>
+                <tr>
+                    <td><a href="#">padding-bottom</a></td>
+                    <td>Sets the bottom padding of an element</td>
+                    <td>1</td>
+                </tr>
+                <tr>
+                    <td><a href="#">padding-left</a></td>
+                    <td>Sets the left padding of an element</td>
+                    <td>1</td>
+                </tr>
+                <tr>
+                    <td><a href="#">padding-right</a></td>
+                    <td>Sets the right padding of an element</td>
+                    <td>1</td>
+                </tr>
+                <tr>
+                    <td><a href="#">padding-top</a></td>
+                    <td>Sets the top padding of an element</td>
+                    <td>1</td>
+                </tr>
+                <tr>
+                    <td><a href="#">position</a></td>
+                    <td>Specifies the type of positioning method used for an element (static, relative, absolute or fixed)</td>
+                    <td>2</td>
+                </tr>
+
+                <tr>
+                    <td><a href="#">top</a></td>
+                    <td>Specifies the top position of a positioned element</td>
+                    <td>2</td>
+                </tr>
+                <tr>
+                    <td><a href="#">right</a></td>
+                    <td>Specifies the right position of a positioned element</td>
+                    <td>2</td>
+                </tr>
+                <tr>
+                    <td><a href="#">bottom</a></td>
+                    <td>Specifies the bottom position of a positioned element</td>
+                    <td>2</td>
+                </tr>
+                <tr>
+                    <td><a href="#">left</a></td>
+                    <td>Specifies the left position of a positioned element</td>
+                    <td>2</td>
+                </tr>
+                <tr>
+                    <td><a href="#">visibility</a></td>
+                    <td>Specifies whether or not an element is visible</td>
+                    <td>2</td>
+                </tr>
+
+                </tbody>
+            </table>
+
+            <h3><a id="text">Text Properties</a></h3>
+            <table class="table">
+                <tbody>
+                <tr>
+                    <th style="width:25%;">Property</th>
+                    <th style="width:67%;">Description</th>
+                    <th style="width:8%;">CSS</th>
+                </tr>
+                <tr>
+                    <td><a href="#">letter-spacing</a></td>
+                    <td>Increases or decreases the space between characters in a text</td>
+                    <td>1</td>
+                </tr>
+                <tr>
+                    <td><a href="#">line-height</a></td>
+                    <td>Sets the line height</td>
+                    <td>1</td>
+                </tr>
+                <tr>
+                    <td><a href="#">text-align</a></td>
+                    <td>Specifies the horizontal alignment of text</td>
+                    <td>1</td>
+                </tr>
+                <tr>
+                    <td><a href="#">text-justify</a></td>
+                    <td>Specifies the justification method used when text-align is "justify"</td>
+                    <td>3</td>
+                </tr>
+                <tr>
+                    <td><a href="#">text-transform</a></td>
+                    <td>Controls the capitalization of text</td>
+                    <td>1</td>
+                </tr>
+                <tr>
+                    <td><a href="#">word-spacing</a></td>
+                    <td>Increases or decreases the space between words in a text</td>
+                    <td>1</td>
+                </tr>
+                <tr>
+                    <td><a href="#">word-wrap</a></td>
+                    <td>Allows long, unbreakable words to be broken and wrap to the next line</td>
+                    <td>3</td>
+                </tr>
+                </tbody>
+            </table>
+
+            <h3><a id="textdecor">Text Decoration Properties</a></h3>
+            <table class="table">
+                <tbody><tr>
+                    <th style="width:25%;">Property</th>
+                    <th style="width:67%;">Description</th>
+                    <th style="width:8%;">CSS</th>
+                </tr>
+                <tr>
+                    <td><a href="#">text-decoration</a></td>
+                    <td>Specifies the decoration added to text</td>
+                    <td>1</td>
+                </tr>
+                <tr>
+                    <td><a href="#">text-decoration-color</a></td>
+                    <td>Specifies the color of the text-decoration</td>
+                    <td>3</td>
+                </tr>
+                <tr>
+                    <td><a href="#">text-decoration-line</a></td>
+                    <td>Specifies the type of line in a text-decoration</td>
+                    <td>3</td>
+                </tr>
+                <tr>
+                    <td><a href="#">text-decoration-style</a></td>
+                    <td>Specifies the style of the line in a text decoration</td>
+                    <td>3</td>
+                </tr>
+                <tr>
+                    <td><a href="#">text-shadow</a></td>
+                    <td>Adds shadow to text </td>
+                    <td>3</td>
+                </tr>
+                </tbody>
+            </table>
+
+            <h3><a id="font">Font Properties</a></h3>
+            <table class="table">
+                <tbody><tr>
+                    <th style="width:25%;">Property</th>
+                    <th style="width:67%;">Description</th>
+                    <th style="width:8%;">CSS</th>
+                </tr>
+                <tr>
+                    <td><a href="#">font</a></td>
+                    <td>Sets all the font properties in one declaration</td>
+                    <td>1</td>
+                </tr>
+                <tr>
+                    <td><a href="#">font-family</a></td>
+                    <td>Specifies the font family for text</td>
+                    <td>1</td>
+                </tr>
+                <tr>
+                    <td><a href="#">font-size</a></td>
+                    <td>Specifies the font size of text</td>
+                    <td>1</td>
+                </tr>
+                <tr>
+                    <td><a href="#">font-style</a></td>
+                    <td>Specifies the font style for text</td>
+                    <td>1</td>
+                </tr>
+                <tr>
+                    <td><a href="#">font-weight</a></td>
+                    <td>Specifies the weight of a font</td>
+                    <td>1</td>
+                </tr>
+                </tbody>
+            </table>
+
+            <h3><a id="table">Table Properties</a></h3>
+            <table class="table">
+                <tbody><tr>
+                    <th style="width:25%;">Property</th>
+                    <th style="width:67%;">Description</th>
+                    <th style="width:8%;">CSS</th>
+                </tr>
+                <tr>
+                    <td><a href="#">border-collapse</a></td>
+                    <td>Specifies whether or not table borders should be collapsed</td>
+                    <td>2</td>
+                </tr>
+                <tr>
+                    <td><a href="#">border-spacing</a></td>
+                    <td>Specifies the distance between the borders of adjacent cells</td>
+                    <td>2</td>
+                </tr>
+                </tbody>
+            </table>
+
+        </div>
+
+
+
+        <div class="btn">
+            <a href="#header" role="button">Back to top</a>
+        </div>
+
+    </div>
+
+</body>
+</html>

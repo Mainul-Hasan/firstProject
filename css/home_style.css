@@ -1,0 +1,259 @@
+/*Home & Exercise */
+body{background-image: url("../img/bg_css.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+}
+h2{
+    color: #4CAF50;
+}
+.btn{
+    margin: 10px auto;
+    width: 80px;
+}
+.btn > a {
+    text-decoration: none;
+}
+
+.table{
+    background-color: #f8f9fa;
+    border: 1px solid #a2a9b1;
+    border-collapse: collapse;
+    color: #000;
+    margin: 1em 0;
+}
+
+.info{
+    border-left: 6px solid #4caf50 !important;
+    border: 1px solid #4caf50;
+    padding-bottom: 8px !important;
+    padding-top: 8px !important;
+}
+
+.note {
+    background-color: #ffffcc;
+    border-left: 6px solid #ffeb3b;
+    padding: 0.01em 16px;
+}
+
+table.table > tr > th, table.table > * > tr > th {
+    background-color: #eaecf0;
+    text-align: center;
+}
+
+table.table > tr > th, table.table > tr > td, table.table > * > tr > th, table.table > * > tr > td {
+    border: 1px solid #a2a9b1;
+    padding: 0.2em 0.4em;
+}
+
+.code-box{
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12) !important;
+    margin: 20px 0;
+    background-color: #f1f1f1;
+    padding: 0.01em 16px;
+}
+
+.code{
+    margin: 20px 0;
+    background-color: #fff;
+    border-left: 4px solid #4caf50;
+    line-height: 1.4;
+    overflow-wrap: break-word;
+    padding: 8px 12px;
+    width: auto;
+}
+
+
+div#header{
+    text-align: center;
+    border: 1px solid black;
+    border-radius: 5px;
+    background-color: white;
+    opacity: 0.8;
+}
+div#header:hover {-webkit-transition: 2s ease-in-out;
+    -moz-transition: 2s ease-in-out;
+    transition: 2s ease-in-out;
+    -webkit-transform: rotateX(360deg); /* Safari */
+    -moz-transform: rotateX(360deg);
+    transform: rotateX(360deg); /* Standard syntax */
+}
+
+#primary_nav_wrap
+{
+    margin-top:15px;
+    margin-bottom: 67px;
+}
+
+
+#primary_nav_wrap ul li.current-menu-item
+{
+    background: #1a35e1;
+}
+
+#primary_nav_wrap > ul:first-child{
+    width: 100%;
+    border: 1px solid black;
+    /*border-radius: 0 26px 26px 0;*/
+    background-color: rgba(60, 110, 225, 0.6);
+}
+
+#primary_nav_wrap > ul:first-child > li > a {
+    border-right: 1px solid white;
+}
+
+#primary_nav_wrap > ul:first-child > li:last-child > a {
+    border-right: none;
+}
+#primary_nav_wrap > ul:first-child > li:nth-child(2) > ul {
+    border-top:1px solid black;
+}
+
+#primary_nav_wrap ul
+{
+    list-style:none;
+    position:relative;
+    float:left;
+    margin:0;
+    padding:0
+}
+
+#primary_nav_wrap ul a
+{
+    display:block;
+    color:#333;
+    text-decoration:none;
+    font-weight:700;
+    font-size:14px;
+    line-height:32px;
+    padding:0 15px;
+    font-family:"HelveticaNeue","Helvetica Neue",Helvetica,Arial,sans-serif
+}
+
+#primary_nav_wrap ul li
+{
+    position:relative;
+    float:left;
+    margin:0;
+    padding:0
+}
+
+#primary_nav_wrap ul li:hover
+{
+    background:#f6f6f6
+}
+
+#primary_nav_wrap ul ul
+{
+    display:none;
+    position:absolute;
+    top:100%;
+    left:0;
+    background:#fff;
+    padding:0
+}
+
+#primary_nav_wrap ul ul li
+{
+    float:none;
+    width:200px
+}
+
+#primary_nav_wrap ul ul a
+{
+    line-height:120%;
+    padding:10px 15px
+}
+
+#primary_nav_wrap ul ul ul
+{
+    top:0;
+    left:100%
+}
+
+#primary_nav_wrap ul li:hover > ul
+{
+    display:block
+}
+
+div#section{
+    border: 1px solid transparent;
+    background-color: rgba(255,255,255,0.7);
+    padding: 0 5% 0 5%; /*padding: top right bottom left */
+    margin: 3% 72px 0 72px; /*margin: top right bottom left*/
+}
+/*css properties*/
+
+.info ul > li{
+
+}
+
+.info ul > li > a {
+    text-decoration: none;
+
+}
+
+.info ul > li > a:hover{
+    color: #333333;
+    font-size: 20px;
+}
+.table a {
+    text-decoration: none;
+}
+
+
+/*Contact us*/
+
+input#name,#email,#subject,#message{
+    width: 100%;
+}
+div#section_contact_us{
+    border: 1px solid transparent;
+    background-color: rgba(255,255,255,0.7);
+    padding: 0 30% 0 30%; /*padding: top right bottom left */
+    margin: 3% 72px 0 72px; /*margin: top right bottom left*/
+}
+
+#section_contact_us h2{
+    color: white;
+}
+
+/*About_us*/
+
+div#section_about_us{
+    border: 1px solid transparent;
+    background-color: rgba(50,50,50,0.7);
+    color:white;
+    padding: 0 5% 0 5%; /*padding: top right bottom left */
+    margin: 3% 72px 0 72px; /*margin: top right bottom left*/
+    overflow: hidden;
+}
+#section_about_us h2{
+    color: white;
+}
+
+#contents_1{
+    float: left;
+    width: 21%;
+    padding: 0 40px;
+    text-align: justify;
+    margin: 0 auto;
+}
+
+
+#contents_2{
+    float: left;
+    width: 21%;
+    padding: 0 114px;
+    text-align: justify;
+    margin: 0 auto;
+}
+
+#contents_3{
+    float: left;
+    width: 21%;
+    padding: 0 40px;
+    text-align: justify;
+    margin: 0 auto;
+}

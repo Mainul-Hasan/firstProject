@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Contact Us</title>
+    <link rel="stylesheet" href="css/home_style.css">
+</head>
+<body>
+    <div id="header">
+        <h1>Welcome to CSS Tutorial</h1>
+    </div>
+    <nav id="primary_nav_wrap">
+        <ul>
+            <li><a href="Home.html">Home</a></li>
+            <li><a href="cssTutorials.html">CSS Tutorials</a>
+                <ul>
+                    <li><a href="cssTutorials.html#cssSyntax">CSS Syntax</a></li>
+                    <li><a href="cssTutorials.html#cssSelectors">CSS Selectors</a></li>
+                    <li><a href="cssTutorials.html#howto">How to use CSS</a></li>
+                    <li><a href="cssTutorials.html#cssProperties">CSS Properties</a>
+                        <ul>
+                            <li><a href="cssTutorials.html#color">Color</a></li>
+                            <li><a href="cssTutorials.html#background">Background and Borders</a></li>
+                            <li><a href="cssTutorials.html#basic">Basic Box</a></li>
+                            <li><a href="cssTutorials.html#text">Text</a></li>
+                            <li><a href="cssTutorials.html#textdecor">Text Decoration</a></li>
+                            <li><a href="cssTutorials.html#font">Fonts</a></li>
+                            <li><a href="cssTutorials.html#table">Table</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <li><a href="About_us.html">About Us</a>
+            <li class="current-menu-item"><a href="Contact_us.html">Contact Us</a></li>
+        </ul>
+    </nav>
+
+    <div id="section_contact_us">
+            <h2 style="font-family: Calibri;text-align: center">CONTACT US<br/><span style="font-family: Calibri;font-size: 15px ; opacity: 0.3 ">We Get Back to You Shortly</span></h2>
+            <form id="contact_us">
+                <label for="name">Name:<br/></label>
+                <input type="text" id="name" name="Name" value="" required/>
+                <br/>
+                <label for="email" >Email:<br/></label>
+                <input type="email" id="email" name="Email" value="" required />
+                <br/>
+                <label for="subject">Subject:<br/></label>
+                <input type="text" id="subject" name="Subject" value="">
+                <br/>
+                <label for="message">Message:<br/></label>
+                <textarea type="text" id="message" name="Message" value="" row="10" cols="20">
+                  Write your message here...
+                </textarea>
+                <br/>
+
+                <p>Are you satisfied with the service:</p>
+                <label for="yes">
+                <input type="radio" id="yes" name="Satisfaction" value="Yes" checked>
+                Yes
+                </label>
+                <label for="no">
+                    <input type="radio" id="no" name="Satisfaction" value="No">
+                    No
+                </label>
+                <br/><br/>
+                <input type="submit" value="Submit">
+                <input type="reset" value="Reset">
+                <br/><br/>
+            </form>
+        </div>
+
+</body>
+</html>
